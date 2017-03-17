@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="common" template="/WEB-INF/views/template/classic.jsp">
+		<put-attribute name="title" value="Show Time" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<!-- Home Page Definition -->
+	<definition name="home" extends="common">
+		<put-attribute name="menu" value="/WEB-INF/views/common/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+		
+	</definition>
+
+	<definition name="registered" extends="common">
+		<put-attribute name="menu" value="/WEB-INF/views/common/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	</definition>
+
+	<definition name="addBook" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/book/addBook.jsp" />
+	</definition>
+
+	<definition name="editBook" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/book/editBook.jsp" />
+	</definition>
+
+	<definition name="login" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/common/login.jsp" />
+	</definition>
+
+	<!-- *********************************************************************** -->
+	<definition name="superadmintemplate" extends="common">
+		<put-attribute name="title" value="Template Project" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/menu/superAdminMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/product/viewProduct1.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<definition name="branchadmintemplate" extends="common">
+		<put-attribute name="title" value="Template Project" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/menu/branchAdminMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/product/viewProduct1.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<definition name="employeetemplate" extends="common">
+		<put-attribute name="title" value="Template Project" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/menu/employeeMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/product/viewProduct1.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<definition name="usertemplate" extends="common">
+		<put-attribute name="title" value="Template Project" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/views/menu/userMenu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/product/viewProduct1.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<!-- *********************************************************************** -->
+
+	<definition name="foodcategorylist" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodCategory/listFoodCategory.jsp" />
+	</definition>
+
+	<definition name="addfoodcategory" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodCategory/addFoodCategory.jsp" />
+	</definition>
+
+	<definition name="editfoodcategory" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodCategory/editFoodCategory.jsp" />
+	</definition>
+
+	<definition name="listFoodMenu" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodMenu/listFoodMenu.jsp" />
+	</definition>
+
+	<definition name="addFoodMenu" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodMenu/addFoodMenu.jsp" />
+	</definition>
+
+	<definition name="editFoodMenu" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodMenu/editFoodMenu.jsp" />
+	</definition>
+
+	<!-- **************************EMPLOYEE REGISTRATION MODULE******************************* -->
+
+	<definition name="employeeList" extends="branchadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/employee/listemployee.jsp" />
+	</definition>
+
+	<definition name="addEmployee" extends="branchadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/employee/addEmployee.jsp" />
+	</definition>
+
+	<!-- **************************END USER REGISTRATION MODULE******************************* -->
+
+	<definition name="addEndUser" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/EndUser/addEndUser.jsp" />
+	</definition>
+
+	<!-- **************************EMPLOYEE PERSONAL INFORMATION MODULE******************************* -->
+
+	<definition name="employeePersonalInformation" extends="employeetemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/employeePersonalInformation/employeePersonalInformation.jsp" />
+	</definition>
+
+	<!-- **************************EMPLOYEE PERSONAL ADDRESS MODULE******************************* -->
+
+	<definition name="employeePersonalAddress" extends="employeetemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/personalAddress/editPersonalAddress.jsp" />
+	</definition>
+
+	<!-- **************************BRANCH MODULE******************************* -->
+	<definition name="branchList" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/branch/listBranch.jsp" />
+	</definition>
+
+	<definition name="addBranch" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/branch/addBranch.jsp" />
+	</definition>
+
+	<definition name="editBranch" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/branch/editBranch.jsp" />
+	</definition>
+
+
+	<!-- **************************BRANCH ADMIN MODULE******************************* -->
+	<definition name="admintemplate" extends="superadmintemplate">
+		<put-attribute name="body" value="/WEB-INF/views/home/adminHome.jsp" />
+	</definition>
+
+	<definition name="addBranchAdmin" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/branchAdmin/addBranchAdmin.jsp" />
+	</definition>
+
+	<definition name="listBranchAdmin" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/branchAdmin/listBranchAdmin.jsp" />
+	</definition>
+
+	<!-- **************************BRANCH ADMIN PERSONAL INFORMATION MODULE******************************* -->
+	<definition name="branchAdminPersonalInformation" extends="branchadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/branchAdmin/branchAdminPersonalInformation.jsp" />
+	</definition>
+
+	<!-- **************************BRANCH ADMIN PERSONAL INFORMATION MODULE******************************* -->
+	<definition name="branchAdminPersonalAddress" extends="branchadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/branchAdmin/branchAdminPersonalAddress.jsp" />
+	</definition>
+
+	<!-- ************************FOOD MENU ITEMS************************************ -->
+
+	<definition name="foodmenuitemlist" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodMenuItem/listFoodMenuItem.jsp" />
+	</definition>
+
+	<definition name="addfoodmenuitem" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodMenuItem/addFoodMenuItem.jsp" />
+	</definition>
+
+	<definition name="editfoodmenuitem" extends="superadmintemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodMenuItem/editFoodMenuItem.jsp" />
+	</definition>
+
+	<!-- ************************Product************************************ -->
+
+	<definition name="viewProduct" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/product/viewProduct1.jsp" />
+	</definition>
+
+	<!-- **************************EndUser PERSONAL INFORMATION MODULE******************************* -->
+	<definition name="endUserPersonalInformation" extends="usertemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/EndUserPersonalInformation/endUserPersonalInformation.jsp" />
+	</definition>
+
+	<!-- **************************END USER PERSONAL ADDRESS MODULE******************************* -->
+
+	<definition name="endUserPersonalAddress" extends="usertemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/endUserPersonalAddress/endUserPersonalAddress.jsp" />
+	</definition>
+
+	<!-- **************************ADD LEAVE BALANCE******************************* -->
+
+	<definition name="listEmployees" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/leaveBalance/listEmployees.jsp" />
+	</definition>
+
+	<definition name="addLeave" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/leaveBalance/addLeave.jsp" />
+	</definition>
+
+	<definition name="editLeave" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/leaveBalance/editLeave.jsp" />
+	</definition>
+
+	<definition name="viewLeave" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/leaveBalance/viewLeaveBalance.jsp" />
+	</definition>
+
+
+	<!-- ************************MY CART************************************ -->
+	<definition name="mycart" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/WEB-INF/views/myCart/myCart.jsp" />
+	</definition>
+
+	<definition name="finalorder" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/myCart/finalOrder.jsp" />
+	</definition>
+
+	<definition name="orderinvoice" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/myCart/orderInvoice.jsp" />
+	</definition>
+
+	<!-- ************************MY CART************************************ -->
+	<definition name="foodorderlist" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodOrders/listFoodOrders.jsp" />
+	</definition>
+
+	<!-- **************************Leave Application******************************* -->
+
+	<definition name="showLeaveApplication" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/leaveApplication/leaveApplication.jsp" />
+	</definition>
+
+	<definition name="viewLeaveApplication" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/leaveApplication/viewLeaveApplication.jsp" />
+	</definition>
+
+	<definition name="createdLeaveApplication" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/leaveApplication/createdLeaveApplication.jsp" />
+	</definition>
+
+	<definition name="viewApproveApplication" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/leaveApplication/viewApproveApplication.jsp" />
+	</definition>
+
+	<definition name="viewRejectApplication" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/leaveApplication/viewRejectApplication.jsp" />
+	</definition>
+	<!-- ************************CHECK DELIVERY ADDRESS ************************************ -->
+	<definition name="checkDeliveryAddress" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/deliveryAddressCheck/deliveryAddressCheck.jsp" />
+	</definition>
+	<!-- ************************FOOD ORDER DELIVERY************************************ -->
+	<definition name="deliveredOrder" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodOrderDelivery/deliveredOrders.jsp" />
+	</definition>
+
+	<definition name="deliverOrder" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodOrderDelivery/deliverOrder.jsp" />
+	</definition>
+	<definition name="dispatchedOrder" extends="common">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/foodOrderDelivery/dispatchOrders.jsp" />
+	</definition>
+	<!-- ************************ERROR PAGE************************************ -->
+	<definition name="errorPage" extends="common">
+		<put-attribute name="body"
+			value="/WEB-INF/views/errorPages/errorPage.jsp" />
+			<put-attribute name="footer"
+			value="" />
+	</definition>
+	
+	<!-- **************************Salary Generation******************************* -->
+
+	<definition name="listEmployees" extends="common">
+		<put-attribute name="body"
+			value="/WEB-INF/views/salaryGeneration/listEmployees.jsp" />
+	</definition>
+	
+	<definition name="viewSalary" extends="common">
+		<put-attribute name="body"
+			value="/WEB-INF/views/salaryGeneration/viewSalary.jsp" />
+	</definition>
+	
+	<definition name="listGeneratedSalary" extends="common">
+		<put-attribute name="body"
+			value="/WEB-INF/views/salaryGeneration/listGeneratedSalary.jsp" />
+	</definition>
+</tiles-definitions>
+
