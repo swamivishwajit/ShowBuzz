@@ -20,11 +20,10 @@ import com.extremity.showbuzz.core.domain.User;
 import com.extremity.showbuzz.service.Iservice;
 
 @Controller
-/*@RequestMapping(value="/")*/
+
 public class HomeController {
 
-	User user=new User();
-	Login login=new Login();
+	
 	Role role=new Role();
 	
 	@Autowired
@@ -48,19 +47,21 @@ public class HomeController {
 		
 		return "home";
 	}
+	
 	@RequestMapping(value="/userRegister",method=RequestMethod.POST)
-	@ResponseBody
+	/*@ResponseBody*/
 	public String userReg(HttpServletRequest req, HttpServletResponse res){
 		
 		System.out.println("inside reg controller");
-
+		User user=new User();
+		Login login=new Login();
 		user.setFname(req.getParameter("fname"));
 		user.setLname(req.getParameter("lname"));
 		user.setMobNo((Long.parseLong(req.getParameter("mobile"))));
 		user.setHintQuestion((req.getParameter("hQuestion")));
 		user.setHintAnswer((req.getParameter("hAnswer")));
-		
-		
+
+		login.setEnabled((byte) 1);
 		login.setPassword(req.getParameter("password"));
 		login.setEmail(req.getParameter("email"));
 		
@@ -73,9 +74,18 @@ public class HomeController {
 		
 		service.userReg(user);
 		
-		return "registered";
+		return "home";
 		
 				
 	}
+	@RequestMapping(value = "selectRegion", method = RequestMethod.POST)
+	private String selectingRegion(HttpServletRequest req, HttpServletResponse res) {
+		// TODO Auto-generated method stub
+		System.out.println("region method called");
+		String city=req.getParameter("city");
+		System.out.println(city);
 
+		
+		return "home";
+	}
 }
